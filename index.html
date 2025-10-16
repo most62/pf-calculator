@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mera PF Kitna Hoga? - EPF Calculator</title>
+    <meta name="description" content="जानिए 60 साल की उम्र तक आपका PF कितना होगा? Free EPF Calculator">
+    <link rel="stylesheet" href="style.css">
+    <!-- PropellerAds Head Code -->
+    <script type="text/javascript" src="https://go.oclaserver.com/apu.php?zoneid=YOUR_ZONE_ID"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 मेरा PF कितना होगा?</h1>
+            <p>अपनी रिटायरमेंट तक का PF जानें</p>
+        </header>
+
+        <div class="calculator">
+            <div class="input-group">
+                <label for="currentAge">आपकी वर्तमान उम्र (साल में)</label>
+                <input type="number" id="currentAge" min="18" max="55" value="25">
+            </div>
+
+            <div class="input-group">
+                <label for="basicSalary">बेसिक सैलरी (महीना)</label>
+                <input type="number" id="basicSalary" value="30000">
+            </div>
+
+            <div class="input-group">
+                <label for="da">DA (Dearness Allowance) महीना</label>
+                <input type="number" id="da" value="5000">
+            </div>
+
+            <div class="input-group">
+                <label for="currentBalance">वर्तमान PF बैलेंस (अगर है तो)</label>
+                <input type="number" id="currentBalance" value="0">
+            </div>
+
+            <div class="input-group">
+                <label for="salaryGrowth">सैलरी ग्रोथ (सालाना %)</label>
+                <input type="number" id="salaryGrowth" value="8" step="0.1">
+            </div>
+
+            <button onclick="calculatePF()">कैलकुलेट करें</button>
+        </div>
+
+        <div id="result" class="result" style="display: none;">
+            <h2>🎉 आपका PF रिजल्ट</h2>
+            <div class="result-card">
+                <div class="result-item">
+                    <span>60 साल की उम्र तक कुल PF:</span>
+                    <strong id="totalPF">0</strong>
+                </div>
+                <div class="result-item">
+                    <span>आपका योगदान:</span>
+                    <span id="employeeContribution">0</span>
+                </div>
+                <div class="result-item">
+                    <span>कंपनी का योगदान:</span>
+                    <span id="employerContribution">0</span>
+                </div>
+                <div class="result-item">
+                    <span>ब्याज कमाई:</span>
+                    <span id="interestEarned">0</span>
+                </div>
+            </div>
+            
+            <div class="share-section">
+                <p>अपना रिजल्ट दोस्तों के साथ शेयर करें!</p>
+                <div class="share-buttons">
+                    <button onclick="shareOnWhatsApp()" class="whatsapp-btn">📱 WhatsApp</button>
+                    <button onclick="shareOnTwitter()" class="twitter-btn">🐦 Twitter</button>
+                    <button onclick="downloadResult()" class="download-btn">📥 इमेज सेव करें</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PropellerAds Display Ad -->
+        <div id="propeller-ad" class="ad-container">
+            <!-- Ad will be loaded here -->
+        </div>
+
+        <div class="info-section">
+            <h3>ℹ️ PF कैलकुलेशन कैसे होती है?</h3>
+            <ul>
+                <li>Employee Contribution: बेसिक + DA का 12%</li>
+                <li>Employer Contribution: बेसिक + DA का 13% (3.67% PF + 8.33% Pension)</li>
+                <li>PF Interest Rate: वर्तमान 8.25% सालाना</li>
+                <li>रिटायरमेंट उम्र: 60 साल मानी गई</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Mera PF Calculator | Made with ❤️ for India</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="ads.js"></script>
+</body>
+</html>
