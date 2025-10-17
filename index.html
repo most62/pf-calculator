@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PF Calculator - Provident Fund Calculator</title>
+    <meta name="description" content="Free Provident Fund Calculator - Calculate your PF maturity amount with interest">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇮🇳 PF Calculator</h1>
+            <p class="subtitle">Provident Fund Maturity Calculator</p>
+        </header>
+
+        <!-- Ads Placeholder - Top -->
+        <div class="ad-container">
+            <div id="ad-top" class="ad-slot">
+                <!-- PopularAds code will go here -->
+            </div>
+        </div>
+
+        <div class="calculator-card">
+            <div class="input-group">
+                <label for="currentAge">वर्तमान उम्र (Current Age)</label>
+                <input type="number" id="currentAge" min="18" max="60" placeholder="उदा: 25">
+                <span class="helper-text">सालों में</span>
+            </div>
+
+            <div class="input-group">
+                <label for="retirementAge">रिटायरमेंट उम्र (Retirement Age)</label>
+                <input type="number" id="retirementAge" min="25" max="70" placeholder="उदा: 60">
+                <span class="helper-text">सालों में</span>
+            </div>
+
+            <div class="input-group">
+                <label for="currentBalance">वर्तमान PF बैलेंस (Current PF Balance)</label>
+                <input type="number" id="currentBalance" placeholder="उदा: 50000">
+                <span class="helper-text">रुपये में</span>
+            </div>
+
+            <div class="input-group">
+                <label for="monthlyContribution">मासिक योगदान (Monthly Contribution)</label>
+                <input type="number" id="monthlyContribution" placeholder="उदा: 5000">
+                <span class="helper-text">रुपये में</span>
+            </div>
+
+            <div class="input-group">
+                <label for="interestRate">ब्याज दर (Interest Rate)</label>
+                <input type="number" id="interestRate" step="0.1" value="8.1" placeholder="उदा: 8.1">
+                <span class="helper-text">% प्रति वर्ष</span>
+            </div>
+
+            <button id="calculateBtn" class="calculate-btn">Calculate PF</button>
+        </div>
+
+        <!-- Ads Placeholder - Middle -->
+        <div class="ad-container">
+            <div id="ad-middle" class="ad-slot">
+                <!-- PopularAds code will go here -->
+            </div>
+        </div>
+
+        <div id="resultSection" class="result-section hidden">
+            <h2>आपका PF परिणाम</h2>
+            <div class="result-grid">
+                <div class="result-item">
+                    <span class="result-label">कुल निवेश</span>
+                    <span class="result-value" id="totalInvestment">₹0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">कुल ब्याज</span>
+                    <span class="result-value" id="totalInterest">₹0</span>
+                </div>
+                <div class="result-item highlight">
+                    <span class="result-label">मैच्योरिटी राशि</span>
+                    <span class="result-value" id="maturityAmount">₹0</span>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="resultChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Ads Placeholder - Bottom -->
+        <div class="ad-container">
+            <div id="ad-bottom" class="ad-slot">
+                <!-- PopularAds code will go here -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PF Calculator</h3>
+                    <p>आपका विश्वसनीय Provident Fund कैलकुलेटर</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>लिंक्स</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="/contact-us.html">Contact Us</a></li>
+                        <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>जानकारी</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/team.html">Our Team</a></li>
+                        <li><a href="/blog.html">PF Blog</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PF Calculator. All Rights Reserved.</p>
+                <p>Made with ❤️ in India 🇮🇳</p>
+                <p>Disclaimer: यह कैलकुलेटर अनुमानित परिणाम देता है। वास्तविक राशि भिन्न हो सकती है।</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="ads.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
