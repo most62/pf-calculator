@@ -19,7 +19,7 @@
 
     <header role="banner" class="site-header">
       <h1> PF Calculator - Provident Fund Maturity Calculator</h1>
-      <p class="subtitle">      PF  ,   - </p>
+      <p class="subtitle">जानें कितना बन सकता है आपका PF सरल, तेज़ और गोबाइल-अनुकूल टूल</p>
     </header>
 
     <!-- Top Ad Placeholder -->
@@ -31,41 +31,41 @@
 
     <main id="main" role="main">
       <section class="calculator-card" aria-labelledby="calc-heading">
-        <h2 id="calc-heading">PF    </h2>
+        <h2 id="calc-heading">PF राशि की गणना करें</h2>
 
         <!-- Inline error box (used instead of alert) -->
         <div id="errorBox" class="error-box hidden" role="alert" aria-live="assertive"></div>
 
-        <p class="intro-text">       ,  ,  PF ,         <strong>Calculate PF</strong> </p>
+        <p class="intro-text">नीचे दिए गए हिला भरें गर्तगान आयु, रोवानिवृत्ति आयु, वर्तगान PF वैलेंरा, मासिक योगदान और अनुमानित वार्षिक व्याज दर। फिर <strong>Calculate PF</strong> दबाएँ।</p>
 
         <div class="input-group">
-          <label for="currentAge">  (Current Age)</label>
+          <label for="currentAge">वर्तमान आयु (Current Age)</label>
           <input type="number" id="currentAge" min="18" max="60" placeholder=": 25" aria-describedby="currentAgeHelp" />
-          <small id="currentAgeHelp" class="helper-text">       ( )</small>
+          <small id="currentAgeHelp" class="helper-text">कृपया अपनी वर्तमान वास्तविक आयु दर्ज करें (वर्षों में)।</small>
         </div>
 
         <div class="input-group">
-          <label for="retirementAge">  (Retirement Age)</label>
+          <label for="retirementAge">रोगानिवृत्ति आयु (Retirement Age)</label>
           <input type="number" id="retirementAge" min="25" max="70" placeholder=": 60" aria-describedby="retirementAgeHelp" />
-          <small id="retirementAgeHelp" class="helper-text">        </small>
+          <small id="retirementAgeHelp" class="helper-text">वह आयु जिस पर आप रिटायर होना चाहते हैं।</small>
         </div>
 
         <div class="input-group">
-          <label for="currentBalance"> PF  (Current PF Balance)</label>
+          <label for="currentBalance">वर्तमान PF बैलेंस (Current PF Balance)</label>
           <input type="number" id="currentBalance" min="0" step="1" placeholder=": 50000" aria-describedby="currentBalanceHelp" />
-          <small id="currentBalanceHelp" class="helper-text"> EPF/UAN       </small>
+          <small id="currentBalanceHelp" class="helper-text">आपके EPF/UAN खाते में वर्तमान में जो राचि है।</small>
         </div>
 
         <div class="input-group">
-          <label for="monthlyContribution">  (Monthly Contribution)</label>
+          <label for="monthlyContribution">मासिक योगदान (Monthly Contribution)</label>
           <input type="number" id="monthlyContribution" min="0" step="1" placeholder=": 5000" aria-describedby="monthlyContributionHelp" />
-          <small id="monthlyContributionHelp" class="helper-text">   PF    </small>
+          <small id="monthlyContributionHelp" class="helper-text">आप हर महीने PF में कितना जोड़ते हैं।</small>
         </div>
 
         <div class="input-group">
-          <label for="interestRate">  (Interest Rate % )</label>
+          <label for="interestRate">ब्याज दर (Interest Rate % वार्षिक)</label>
           <input type="number" id="interestRate" min="0" step="0.1" value="8.1" aria-describedby="interestRateHelp" />
-          <small id="interestRateHelp" class="helper-text">EPFO     (: 8.1)</small>
+          <small id="interestRateHelp" class="helper-text">EPFO की घोषित वार्षिक दर (उदाहरण: 8.1)</small>
         </div>
 
         <button id="calculateBtn" class="calculate-btn" aria-label="Calculate PF">Calculate PF</button>
@@ -79,22 +79,22 @@
       </section>
 
       <section id="resultSection" class="result-section hidden" aria-live="polite" aria-labelledby="result-heading">
-        <h2 id="result-heading"> PF  (Your PF Result)</h2>
+        <h2 id="result-heading">आपका PF परिणाग (Your PF Result)</h2>
 
         <div class="result-grid" role="region" aria-label="PF results">
           <div class="result-item" aria-hidden="false">
-            <span class="result-label">  (Total Investment)</span>
-            <span class="result-value" id="totalInvestment">0</span>
+            <span class="result-label">कुल निवेश (Total Investment)</span>
+            <span class="result-value" id="totalInvestment">₹0</span>
           </div>
 
           <div class="result-item" aria-hidden="false">
-            <span class="result-label">  (Total Interest)</span>
-            <span class="result-value" id="totalInterest">0</span>
+            <span class="result-label">कुल व्याज (Total Interest)</span>
+            <span class="result-value" id="totalInterest">₹0</span>
           </div>
 
           <div class="result-item highlight" aria-hidden="false">
-            <span class="result-label">  (Maturity Amount)</span>
-            <span class="result-value" id="maturityAmount">0</span>
+            <span class="result-label">परिपक्व राशि (Maturity Amount)</span>
+            <span class="result-value" id="maturityAmount">₹0</span>
           </div>
         </div>
 
@@ -204,3 +204,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
