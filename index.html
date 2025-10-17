@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PF Calculator - Provident Fund Maturity Calculator</title>
+  <meta name="description" content="Free Provident Fund (PF) Calculator  estimate your PF maturity amount with monthly contributions, current balance and interest. EPF, VPF, retirement planning guide and calculator." />
+  <meta name="keywords" content="PF Calculator, Provident Fund, EPF Calculator, PF Maturity, Retirement Calculator, India, Compound Interest" />
+  <meta name="author" content="most62" />
+  <link rel="canonical" href="https://most62.github.io/pf-calculator/" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <!-- Add robots if needed -->
+  <meta name="robots" content="index, follow" />
+</head>
+<body>
+  <div class="container" id="site-container">
+
+    <header role="banner" class="site-header">
+      <h1> PF Calculator - Provident Fund Maturity Calculator</h1>
+      <p class="subtitle">      PF  ,   - </p>
+    </header>
+
+    <!-- Top Ad Placeholder -->
+    <section class="ad-container" aria-label="Top advertisement">
+      <div id="ad-top" class="ad-slot" role="complementary" aria-hidden="false">
+        <!-- Ad code injected by ads.js -->
+      </div>
+    </section>
+
+    <main id="main" role="main">
+      <section class="calculator-card" aria-labelledby="calc-heading">
+        <h2 id="calc-heading">PF    </h2>
+
+        <!-- Inline error box (used instead of alert) -->
+        <div id="errorBox" class="error-box hidden" role="alert" aria-live="assertive"></div>
+
+        <p class="intro-text">       ,  ,  PF ,         <strong>Calculate PF</strong> </p>
+
+        <div class="input-group">
+          <label for="currentAge">  (Current Age)</label>
+          <input type="number" id="currentAge" min="18" max="60" placeholder=": 25" aria-describedby="currentAgeHelp" />
+          <small id="currentAgeHelp" class="helper-text">       ( )</small>
+        </div>
+
+        <div class="input-group">
+          <label for="retirementAge">  (Retirement Age)</label>
+          <input type="number" id="retirementAge" min="25" max="70" placeholder=": 60" aria-describedby="retirementAgeHelp" />
+          <small id="retirementAgeHelp" class="helper-text">        </small>
+        </div>
+
+        <div class="input-group">
+          <label for="currentBalance"> PF  (Current PF Balance)</label>
+          <input type="number" id="currentBalance" min="0" step="1" placeholder=": 50000" aria-describedby="currentBalanceHelp" />
+          <small id="currentBalanceHelp" class="helper-text"> EPF/UAN       </small>
+        </div>
+
+        <div class="input-group">
+          <label for="monthlyContribution">  (Monthly Contribution)</label>
+          <input type="number" id="monthlyContribution" min="0" step="1" placeholder=": 5000" aria-describedby="monthlyContributionHelp" />
+          <small id="monthlyContributionHelp" class="helper-text">   PF    </small>
+        </div>
+
+        <div class="input-group">
+          <label for="interestRate">  (Interest Rate % )</label>
+          <input type="number" id="interestRate" min="0" step="0.1" value="8.1" aria-describedby="interestRateHelp" />
+          <small id="interestRateHelp" class="helper-text">EPFO     (: 8.1)</small>
+        </div>
+
+        <button id="calculateBtn" class="calculate-btn" aria-label="Calculate PF">Calculate PF</button>
+      </section>
+
+      <!-- Middle Ad Placeholder -->
+      <section class="ad-container" aria-label="Middle advertisement">
+        <div id="ad-middle" class="ad-slot" role="complementary" aria-hidden="false">
+          <!-- Ad code injected by ads.js -->
+        </div>
+      </section>
+
+      <section id="resultSection" class="result-section hidden" aria-live="polite" aria-labelledby="result-heading">
+        <h2 id="result-heading"> PF  (Your PF Result)</h2>
+
+        <div class="result-grid" role="region" aria-label="PF results">
+          <div class="result-item" aria-hidden="false">
+            <span class="result-label">  (Total Investment)</span>
+            <span class="result-value" id="totalInvestment">0</span>
+          </div>
+
+          <div class="result-item" aria-hidden="false">
+            <span class="result-label">  (Total Interest)</span>
+            <span class="result-value" id="totalInterest">0</span>
+          </div>
+
+          <div class="result-item highlight" aria-hidden="false">
+            <span class="result-label">  (Maturity Amount)</span>
+            <span class="result-value" id="maturityAmount">0</span>
+          </div>
+        </div>
+
+        <div class="chart-container" role="img" aria-label="Investment vs Interest chart">
+          <canvas id="resultChart" width="400" height="300" aria-hidden="false"></canvas>
+        </div>
+      </section>
+
+      <!-- Long-form informative content 1000+ words (SEO & user-helpful) -->
+      <article class="content-section" aria-labelledby="info-heading">
+        <h2 id="info-heading">Provident Fund (PF)  ?   </h2>
+
+        <p>
+          Provident Fund (PF)                      Employee Provident Fund (EPF)  EPFO                   (   12%  )           EPFO            
+        </p>
+
+        <h3>PF   ?</h3>
+        <p>
+                           PF    - (Section 80C  )                        (    )      
+        </p>
+
+        <h3>  </h3>
+        <p>
+                                P ( ), r ( ), PMT ( ),  t (  ) ,                            (r/12),         
+        </p>
+
+        <h3>EPF, VPF  PPF  </h3>
+        <p>
+          <strong>EPF (Employees' Provident Fund)</strong>            <br/>
+          <strong>VPF (Voluntary Provident Fund)</strong>      EPF       (12%  )<br/>
+          <strong>PPF (Public Provident Fund)</strong>       ,       -  
+        </p>
+
+        <h3>PF     </h3>
+        <p>
+          PF    -    ,       5    -   ,            /     EPFO     UAN       
+        </p>
+
+        <h3>PF      </h3>
+        <p>
+          EPFO          -                   8%  9%               -           
+        </p>
+
+        <h3>PF Calculator   </h3>
+        <p>
+                                         ,          "what-if"             
+        </p>
+
+        <h3>  </h3>
+        <ul>
+          <li>    VPF              </li>
+          <li>EPFO              </li>
+          <li>Tax planning   PF       (PPF, NPS )</li>
+          <li>Regularly  UAN/EPF      employer contributions  </li>
+        </ul>
+
+        <p>
+            PF  ,   -                                    
+        </p>
+      </article>
+
+      <!-- Bottom Ad Placeholder -->
+      <section class="ad-container" aria-label="Bottom advertisement">
+        <div id="ad-bottom" class="ad-slot" role="complementary" aria-hidden="false">
+          <!-- Ad code injected by ads.js -->
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About PF Calculator</h3>
+          <p>       Provident Fund (PF), EPF  retirement planning     </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="/contact-us.html">Contact Us</a></li>
+            <li><a href="/disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/blog.html">PF Blog</a></li>
+            <li><a href="/sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 PF Calculator. All Rights Reserved.</p>
+        <p>Made with  in India</p>
+        <p><strong>Disclaimer:</strong>        ;   EPFO          </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Local scripts (ads first so consent can load ads before calc if consent given) -->
+  <script src="ads.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
